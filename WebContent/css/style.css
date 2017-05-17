@@ -1,0 +1,54 @@
+BODY,DIV,TEXTAREA,
+{
+ scrollbar-face-color: #ffffff; 
+ scrollbar-shadow-color: #CCCCCC; 
+ scrollbar-highlight-color: #CCCCCC; 
+ scrollbar-3dlight-color: #ffffff; 
+ scrollbar-darkshadow-color: #ffffff; 
+ scrollbar-track-color: #ffffff; 
+ scrollbar-arrow-color: #999999;
+}
+td{font-size:9pt;}
+
+html, 
+body {
+	margin: 0px;
+	padding: 0px;
+}
+
+body, td, div
+{font-family: µ¸¿ò; color:#555555; font-size:9pt; line-height:18px;letter-spacing:-0.04em}
+
+
+
+textarea, input, select
+{font-family: µ¸¿ò; font-size:12px; border:1px solid #CCCCCC; color:#333333; line-height:18px; background-color:#F7F7F7;letter-spacing:-0.04em}
+
+input		{height:auto}
+
+.textareaRed	{
+ scrollbar-face-color: #ffffff; 
+ scrollbar-shadow-color: #CCCCCC; 
+ scrollbar-highlight-color: #CCCCCC; 
+ scrollbar-3dlight-color: #ffffff; 
+ scrollbar-darkshadow-color: #ffffff; 
+ scrollbar-track-color: #ffffff; 
+ scrollbar-arrow-color: #860528}
+
+.scrollRed	{
+ scrollbar-face-color: #ffffff; 
+ scrollbar-shadow-color: #E7E7E7; 
+ scrollbar-highlight-color: #E7E7E7; 
+ scrollbar-3dlight-color: #ffffff; 
+ scrollbar-darkshadow-color: #ffffff; 
+ scrollbar-track-color: #ffffff; 
+ scrollbar-arrow-color: #860528}
+
+
+div			{position: relative;}
+img			{border:0px;}
+form		{margin:0;}
+.inout_Tblack{color:#000000}
+.radio		{border:none ;height:15;width:15; background-color:#FFFFFF}
+.checkbox	{border:none ;height:15;width:15; background-color:#FFFFFF; margin:0 4px 0 5px}
+.clear		{clear:both;}

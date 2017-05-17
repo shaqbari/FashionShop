@@ -1,0 +1,108 @@
+<html>
+<head>
+<title></title>
+<link rel="stylesheet" href="/admin/css/intranet.css" type="text/css">
+<style>
+td{font-size:9pt}
+</style>
+</head>
+<body leftmargin="10" topmargin="0"  marginwidth="0" marginheight="0">
+<table width="900" border="0" cellpadding="0" cellspacing="0">
+<form name="form1" method="post" action="/admin/product/list.html">
+<tr>
+	<td>&nbsp;</td>
+</tr>
+<tr valign="middle">
+  	<td height="30" align="right">
+	<select name="sellType" style="width:170px" onChange="form1.submit();">
+        <option value="">▼ 판매 유형</option>
+        <option value="new" >신상품</option>
+        <option value="best" >베스트상품</option>
+        <option value="recom" >추천상품</option>
+      </select> 
+	<img src="/admin/images/bt_search.gif"  onClick="form1.submit();" style="cursor:hand">	
+	</td>
+</tr>
+<tr>
+	<td>
+	
+	<table width="900" border="0" cellspacing="0" cellpadding="0" class="default" id="intranet_board1">
+	<tr height="27">
+		<td colspan="11"></td>
+	</tr>
+	<tr> 
+		<td colspan="11" height="5" bgcolor="#BBBBBB"></td>
+	</tr>
+	<tr height="35" align="center">
+        <td width="38" bgcolor="#EFEFEF" class="top_bg"><strong>Code</strong></td>
+	    <td width="161" bgcolor="#EFEFEF" class="top_bg"><strong>상품명</strong></td>
+        <td width="51" bgcolor="#EFEFEF" class="top_bg"><strong>성별</strong></td>
+        <td width="106" bgcolor="#EFEFEF" class="top_bg"><strong>카테고리</strong></td>
+	    <td width="85" bgcolor="#EFEFEF" class="top_bg"><strong>브랜드</strong></td>
+        <td width="77" bgcolor="#EFEFEF" class="top_bg"><strong>원산지</strong></td>
+	    <td width="65" bgcolor="#EFEFEF" class="top_bg"><strong>가격</strong></td>
+	    <td width="69" bgcolor="#EFEFEF" class="top_bg"><strong>할인가</strong></td>
+	    <td width="54" bgcolor="#EFEFEF" class="top_bg"><strong>적립금</strong></td>
+	    <td width="99" bgcolor="#EFEFEF" class="top_bg"><strong>사이즈</strong></td>
+	    <td width="95" bgcolor="#EFEFEF" class="top_bg"><strong>색상</strong></td>
+	    </tr>
+    <tr><td colspan="11" height="1" bgcolor="#CCCCCC"></td></tr>
+	
+	
+      <tr height="27" align="center" onMouseOver="this.style.background='#f1eded'" onMouseOut="this.style.background=''">
+        <td width="38"align="center">14</td>
+        <td style="padding-left:10px">
+		<span class="style1"></span>		</td>
+        <td width="51"></td>
+        <td width="106"></td>
+        <td width="85"></td>
+	    <td width="77" align="center"></td>
+        <td align="center"></td>
+        <td align="center"></td>
+        <td align="center"></td>
+        <td align="center"></td>
+        <td align="center"></td>
+        </tr>
+		
+	  <tr><td colspan="11" height="1" bgcolor="#CCCCCC"></td></tr>
+      
+      <tr>
+        <td colspan="11" height="5" bgcolor="#BBBBBB"></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr> 
+	<td height="50" colspan="2" valign="top">
+<!--Paging Start-->
+	<table width="900" cellspacing="2" cellpadding="2" style="font-size:9pt">
+	<tr>
+		<td width="100"><a href="regist.html?busi_type=" class="but"></a></td>
+		<td width="170" align="right"></td>
+		<td width="170" align="right">&nbsp;		</td>
+		<td width="198" height="15" align="right" id="form_page">
+			<img src="/admin/images/bt_prev02.gif" border="0">
+			<img src="/admin/images/bt_prev01.gif" border="0">
+			<img src="/admin/images/bt_next01.gif" border="0">
+			<img src="/admin/images/bt_next02.gif" border="0">
+		</td>
+	</tr>
+	</table>
+
+<!--Paging End-->
+	</td>
+  </tr>
+  <tr><td><table width="590" border="0" cellpadding="0" cellspacing="0" align="center" class="copyright">
+   <tr>
+    <td height="43"></td>
+  </tr>
+  <tr>
+    <td class="schedule">COPYRIGHT(C) 2007 BY  Styleten ALL RIGHTS RESERVED.</td>
+  </tr>
+</table>
+
+</td></tr>
+  </form>
+</table>
+
+</body>
+</html>

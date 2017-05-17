@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias type="com.fashion.admin.Admin" alias="Admin"/>
+		<typeAlias type="com.fashion.product.TopCategory" alias="TopCategory"/>
+		<typeAlias type="com.fashion.product.SubCategory" alias="SubCategory"/>
+		<typeAlias type="com.fashion.product.Product" alias="Product"/>
+	</typeAliases>
+	
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="JNDI">
+				<property name="data_source" value="java:comp/env/jdbc/myoracle" />
+			</dataSource>
+		</environment>
+	</environments>
+	
+	<mappers>
+		<mapper resource="com/fashion/mybatis/AdminMapper.xml"/>
+		<mapper resource="com/fashion/mybatis/TopCategoryMapper.xml"/>
+		<mapper resource="com/fashion/mybatis/SubCategoryMapper.xml"/>
+		<mapper resource="com/fashion/mybatis/ProductMapper.xml"/>
+	</mappers>
+	
+</configuration>

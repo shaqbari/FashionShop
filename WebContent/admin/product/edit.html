@@ -1,0 +1,75 @@
+<!--#include virtual="/include/lib.asp"-->
+<%openDB()%>
+<%
+Dim	URL			'저장위치 상위 폴더
+Dim fileName	'파일명  
+Dim code,Width,Height
+TableName 	= "product"
+Width		= 106
+Height		= 95
+Set Dext = server.CreateObject("DEXT.FileUpload")
+
+'-------------------------------------------------
+' DefaultPath
+'-------------------------------------------------
+URL = Server.MapPath("\")&"\data\product\"
+Dext.DefaultPath = URL
+
+code 		= Dext("code")
+file_name	= Dext("preFile") '이전 파일	
+IF Dext("filename")<>"" Then
+	'----------------------------------
+	'파일 삭제
+	'----------------------------------
+	IF file_name <>"" Then
+		deleteFile(URL&"File"&code&"_S."&getFileExtension(file_name))
+		deleteFile(URL&"File"&code&"_B."&getFileExtension(file_name))
+	End IF	
+
+	'----------------------------------
+	'업로드 되는 파일이 있다면, 이전 파일명(file_name)은 새 파일명으로 대체됨
+	'----------------------------------
+	file_name = Dext("filename").FileName
+
+	'----------------------------------
+	' 섬네일 저장
+	'----------------------------------
+	Set Thumb =Server.CreateObject("DEXT.ImageProc")
+	IF True = Thumb.SetSourceFile(Dext.TempFilePath) Then
+		systemFilename_S = "File"&code&"_S."&getFileExtension(Dext("filename"))
+		Thumb.SaveasThumbnail URL&"\"&systemFilename_S ,Width ,	Height, false	
+	End IF
+
+	'----------------------------------
+	' 큰이미지 저장
+	'----------------------------------
+	systemFilename_B = "File"&code&"_B."&getFileExtension(Dext("filename"))
+	Dext.SaveAs(URL&"\"&systemFilename_B) 
+	'----------------------------------
+End IF
+
+productName	= Dext("productName")
+gender		= Dext("gender")
+category	= Dext("category")
+brand		= Dext("brand")
+nation		= Dext("nation")
+price		= Dext("price")
+discount	= Dext("discount")
+ratio		= Dext("ratio")
+memo		= replaceString(Dext("memo"))
+size		= Trim(Dext("size"))
+color		= Trim(Dext("color"))
+filename	= userFilename
+content		= Dext("content")
+
+SQL="update "&TableName&" set productName='"&productName&"',gender='"
+SQL=SQL&gender&"',category='"&category&"',brand='"&brand&"',nation='"&nation&"',price="&price&",discount="&discount
+SQL=SQL&",ratio="&ratio&",memo='"&memo&"',size='"&size&"',color='"&color&"',filename='"&filename&"',content='"&content
+SQL=SQL&"' where code="&code
+db.Execute(SQL)
+'Response.Write(SQL) 
+Response.Redirect("view.asp?code="&code)
+Set Thumb 	= nothing
+Set Dext 	= nothing
+closeDB()
+%>

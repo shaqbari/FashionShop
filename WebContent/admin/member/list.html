@@ -1,0 +1,164 @@
+<html>
+<head>
+<title></title>
+<link rel="stylesheet" href="/admin/css/intranet.css" type="text/css">
+<style>
+td{font-size:9pt}
+.style1 {color: #FF3300;}
+</style>
+</head>
+<body leftmargin="50" topmargin="0"  marginwidth="0" marginheight="0">
+<table width="900" border="0" cellpadding="0" cellspacing="0">
+<form name="form1" method="post" action="/admin/food_deal/list.asp">
+<tr>
+	<td>&nbsp;</td>
+</tr>
+<tr valign="middle">
+  	<td height="30" align="right">
+	  <select name="yy" style="width:80px">
+	  	
+		<option value="2007" selected>2007</option>
+		
+		<option value="2006" >2006</option>
+		
+		<option value="2005" >2005</option>
+		
+		<option value="2004" >2004</option>
+		
+		<option value="2003" >2003</option>
+		
+		<option value="2002" >2002</option>
+		
+      </select>
+	  년 
+	  <select name="mm" style="width:50px">
+        
+        <option value="1" >1</option>
+        
+        <option value="2" >2</option>
+        
+        <option value="3" >3</option>
+        
+        <option value="4" >4</option>
+        
+        <option value="5" >5</option>
+        
+        <option value="6" >6</option>
+        
+        <option value="7" >7</option>
+        
+        <option value="8" >8</option>
+        
+        <option value="9" >9</option>
+        
+        <option value="10" >10</option>
+        
+        <option value="11" selected>11</option>
+        
+        <option value="12" >12</option>
+        
+      </select>
+	  월 까지
+	  <select name="busi_type" style="width:170px" onChange="form1.submit();">
+        <option value="">▼ 관리구분</option>
+		
+        <option value="1" >식자재 매입 관리</option>
+        
+        <option value="2" >부자재 매입 관리</option>
+        
+        <option value="3" >세금/요금 관리</option>
+        
+        <option value="4" >관리비/임대료 관리</option>
+        
+        <option value="5" >바이트넷</option>
+        
+        <option value="6" >기타 경비</option>
+        
+        <option value="7" >급여</option>
+        
+      </select> 
+	<img src="/admin/images/bt_search.gif"  onClick="form1.submit();" style="cursor:hand">	
+	</td>
+</tr>
+<tr>
+	<td>
+	
+	<table width="900" border="0" cellspacing="0" cellpadding="0" class="default" id="intranet_board1">
+	<tr height="27">
+		<td colspan="9">
+		
+		<span class="style1">2007</span> 년<span class="style1">11</span> 월까지의 총 거래내역입니다.		</td>
+	</tr>
+	<tr> 
+		<td colspan="9" height="5" bgcolor="#BBBBBB"></td>
+	</tr>
+	<tr height="35" align="center">
+        <td width="41" bgcolor="#EFEFEF" class="top_bg"><strong>Code</strong></td>
+	    <td width="82" bgcolor="#EFEFEF" class="top_bg"><strong>회원아이디</strong></td>
+        <td width="65" bgcolor="#EFEFEF" class="top_bg"><strong>이 름</strong></td>
+        <td width="97" bgcolor="#EFEFEF" class="top_bg"><strong>주민번호</strong></td>
+	    <td width="56" bgcolor="#EFEFEF" class="top_bg"><strong>생일</strong></td>
+        <td width="157" bgcolor="#EFEFEF" class="top_bg"><strong>이메일</strong></td>
+	    <td width="60" bgcolor="#EFEFEF" class="top_bg"><strong>우편번호</strong></td>
+	    <td width="255" bgcolor="#EFEFEF" class="top_bg"><strong>주소</strong></td>
+	    <td width="87" bgcolor="#EFEFEF" class="top_bg"><strong>연락처</strong></td>
+	    </tr>
+    <tr><td colspan="9" height="1" bgcolor="#CCCCCC"></td></tr>
+      <tr height="27" align="center" onMouseOver="this.style.background='#f1eded'" onMouseOut="this.style.background=''">
+        <td width="41"align="center">14</td>
+        <td style="padding-left:10px">
+		<span class="style1">minzino</span>		</td>
+        <td width="65">민진호</td>
+        <td width="97">850815-1042222</td>
+        <td width="56">750815</td>
+	    <td width="157" align="center"><a href="regist.asp?company_code=23">zino11897@naver.com</a></td>
+        <td align="center"><a href="bank.asp?company_code=23">411-380</a></td>
+        <td align="center">서울시 강동구 천호동 임창 아파트 24동 104호 </td>
+        <td align="center">016-867-9055</td>
+        </tr>
+	  <tr><td colspan="9" height="1" bgcolor="#CCCCCC"></td></tr>
+      
+      <tr>
+        <td colspan="9" height="5" bgcolor="#BBBBBB"></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr> 
+	<td height="50" colspan="2" valign="top">
+<!--Paging Start-->
+	<table width="900" cellspacing="2" cellpadding="2" style="font-size:9pt">
+	<tr>
+		<td width="100"><a href="regist.asp?busi_type=" class="but"></a></td>
+		<td width="170" align="right"></td>
+		<td width="170" align="right">&nbsp;		</td>
+		<td width="198" height="15" align="right" id="form_page">
+			<a href="#"><img src="/admin/images/bt_prev02.gif" border="0"></a>
+			<a href="#"><img src="/admin/images/bt_prev01.gif" border="0"></a>
+			
+			<a href="/admin/food_deal/list.asp?CurrentPage=1&busi_type=&yy=2007&mm=11&company=">1</a> 
+			
+			<a href="#"><img src="/admin/images/bt_next01.gif" border="0"></a>
+			<a href="#"><img src="/admin/images/bt_next02.gif" border="0"></a>
+		</td>
+	</tr>
+	</table>
+
+<!--Paging End-->
+	</td>
+  </tr>
+  <tr><td><table width="590" border="0" cellpadding="0" cellspacing="0" align="center" class="copyright">
+   <tr>
+    <td height="43"></td>
+  </tr>
+  <tr>
+    <td class="schedule">COPYRIGHT(C) 2007 BY  Styleten ALL RIGHTS RESERVED.</td>
+  </tr>
+</table>
+
+
+</td></tr>
+  </form>
+</table>
+
+</body>
+</html>

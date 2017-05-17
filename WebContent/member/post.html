@@ -1,0 +1,62 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<title>스타일이 살아있는 곳 STYLETEN</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+<script language="javascript">
+function searchAddr(){
+	if(!form1.addr.value){
+		alert("주소를 기재하여 주십시요");
+		form1.addr.focus();
+		return;
+	}
+	form1.target="postFrame";
+	form1.action="post.jsp";
+	form1.submit();
+}
+</script>
+</head>
+
+<body leftmargin="0" topmargin="0">
+<table width="503" height="258" border="0" cellpadding="0" cellspacing="0">
+<form name="form1">
+  <tr>
+    <td background="images/check/check_bg01.gif"><table width="100%" height="258" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td height="30" valign="bottom" style="padding-left:27px;"><img src="/images/check/addr_check_img.gif" width="101" height="14"></td>
+      </tr>
+      <tr>
+        <td height="40" style="padding-left:30px;">현재 거주하고 있는 읍/면/동 명을 입력하시기 바랍니다. </td>
+      </tr>
+      <tr>
+        <td height="30" valign="top">
+		
+		<!-- 주소입력 -->
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="331" align="right"><input name="addr" type="text" id="addr" style="width:242px;">
+            
+            </td>
+            <td width="4"></td>
+            <td width="168"><img src="/images/check/addr_btn.gif" width="53" height="18" style="cursor:hand" onClick="searchAddr()"></td> 
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td height="71"><iframe src="#" height="100px" width="503px" frameborder="0" marginheight="0" marginwidth="0" name="postFrame" scrolling="auto"></iframe></td>
+      </tr>
+      <tr>
+        <td height="42"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="230"></td>
+            <td width="216"><img src="/images/check/ok_btn.gif" width="42" height="22"></td> 
+            <td width="57"><img src="/images/check/close_btn.gif" width="39" height="13" onClick="window.close();"></td> 
+          </tr>
+        </table></td>
+      </tr>
+    </table></td>
+  </tr>
+  </form>
+</table>
+</body>
+</html>

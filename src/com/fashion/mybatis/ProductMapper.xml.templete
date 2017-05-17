@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Product">
+	<insert id="insert" parameterType="Product">
+	<!--인자가 여러개면 자동맵핑되게 dto로 parameter type을 지정한다.  -->
+		insert into product(
+			product_id,
+			sub_id,
+			product_name,
+			gender,
+			brand,
+			origin,
+			price,
+			discount,
+			point,
+			memo,
+			psize,
+			color,
+			img,
+			detail
+		)
+		 values(
+		 	seq_product.nextval,
+		 	#{sub_id},
+		 	#{product_name},
+		 	#{gender},
+		 	#{brand},
+		 	#{origin},
+		 	#{price},
+		 	#{discount},
+		 	#{point},
+		 	#{memo},
+		 	#{psize},
+		 	#{color},
+		 	#{img},
+		 	#{detail}
+		 )
+		 <selectKey keyProperty="product_id" order="AFTER" resultType="int">
+		 	select seq_product.currval as seq from dual
+		 </selectKey>		 
+	</insert>	 
+	
+	<!-- <select id="">
+		select seq_product.currval from dual
+	</select> -->
+</mapper>
+<!-- mybatis에서 변수는 #{}안에 넣는다  jsp의 $와 헷갈리지 말자 
+insert실행하자마자 currval을 구해와야 하는데 이때  insert안에 selectKey를 이용한다.
+keyProperty는 dto의 primarykey를 이용하자!
+-->
+

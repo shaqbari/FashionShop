@@ -1,0 +1,197 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<title>스타일이 살아있는 곳 STYLETEN</title>
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<script src="js/embed_patch.js" type="text/javascript"></script>
+<style>
+td {vertical-align:top;}
+</style>
+<style type="text/css">
+    .top_board_title, .top_board_title a, .top_board_title a:link, .top_board_title a:hover, .top_board_title a:visited {
+    font-family:굴림;
+        font-size:9pt;
+        font-weight:normal;
+        text-decoration:none;
+        color:777777;
+    }
+    .board_text, .board_text a, .board_text a:link, .board_text a:hover, .board_text a:visited {
+    font-family:굴림;
+        font-size:9pt;
+        font-weight:normal;
+        text-decoration:none;
+        color:777777;
+    }
+    .page_text, .page_text a, .page_text a:link, .page_text a:hover, .page_text a:visited {
+    font-family:굴림;
+        font-size:9pt;
+        font-weight:normal;
+        text-decoration:none;
+        color:777777;
+    }
+    .current_page, .current_page a, .current_page a:link, .current_page a:hover, .current_page a:visited {
+    font-family:굴림;
+        font-size:9pt;
+        font-weight:normal;
+        text-decoration:none;
+        color:777777;
+    }
+</style>
+<script type="text/JavaScript">
+<!--
+
+
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+//-->
+</script>
+</head>
+
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="center" valign="top"><table width="992" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        	  
+	  <!-- 탑메뉴 시작 -->
+        <td><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="992" height="175">
+          <param name="movie" value="flash/top.swf">
+          <param name="quality" value="high">
+          <embed src="flash/top.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="992" height="175"></embed>
+        </object></td>
+		<!-- 탑메뉴 끝 -->
+		
+      </tr>
+      <tr>
+        <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+		  
+		  <!-- 좌측메뉴 -->
+            <td width="261"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="261" height="282">
+              <param name="movie" value="flash/left.swf">
+              <param name="quality" value="high">
+              <embed src="flash/left.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="261" height="282"></embed>
+            </object></td>
+            <td>
+			
+			<!-- 글쓰기 시작 ============================================================================ -->
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="731" height="102" valign="top"background="images/main_bg05.gif" style="padding-top:10px;"><img src="/images/write/write_title.gif" width="731" height="67"></td>
+              </tr>
+              <tr>
+                <td><img src="/images/write/write_bg01.gif" width="59" height="30"></td>
+              </tr>
+              <tr>
+                <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td width="8"></td>
+                    <td width="553">
+					<table id="board_main" width="553" cellpadding="0" cellspacing="0">
+    <tr>
+        <td align="center" valign="middle">
+                <form name="form1">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+            <td>
+            
+			
+			<!-- 글쓰기 입력창 ================================================================== -->
+			<table id="board_main_table" border="0" cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+                <th class="board_space" width="60"></th>
+                <th class="board_space" width=""></th>
+            </tr>
+            <tr>
+                <td colspan="2" align="center" class="write_title">글쓰기</td>
+            </tr>
+            <tr><td class="board_space gray2_bg" colspan="2"></td></tr>
+            <tr>
+                <td class="board_write_name board_text">이 름</td>
+                <td class="write_form board_text">
+                                <input type="text" id="hname" name="hname" size="10" value="" />            <input type="hidden" id="user_id" name="user_id" value="" />
+            <input type="hidden" id="user_name" name="user_name" value="" />                    <span class="write_exp">            <span class="password_header board_text">비밀번호</span>
+            <input name="passwd" id="passwd" type="password"  size="10" onKeyDown="password_auth_check(this);" />                <input type="checkbox" name="lock" value="Y" />잠금사용</span>                </td>
+            </tr>
+            <tr><td class="board_line gray3_bg" colspan="2">&nbsp;</td></tr>
+            <tr>
+                <td class="board_write_email board_text">E-MAIL</td>
+                <td class="write_form board_text"><input id="email" name="email" value="" /> <span class="write_exp">* email을 쓰시면 답변이 메일로 갑니다.</span></td>
+            </tr>
+            <tr><td class="board_line gray3_bg" colspan="2">&nbsp;</td></tr>
+            <tr>
+                <td class="board_write_title board_text">제 목</td>
+                <td class="write_form board_text">
+                                                                                        <input name="subject" id="subject" size="50" maxlength="100" value="" />
+                                    <input type="checkbox" name="tag" value="ok"  /><span class="write_exp">HTML태그 허용</span>                                                </td>
+            </tr>
+            <tr><td class="board_line gray3_bg" colspan="2">&nbsp;</td></tr>
+            <tr>
+                <td class="board_write_content board_text">내 용</td>
+                <td class="write_form board_text">
+                    <textarea name="content" id="content" cols="67" rows="15" wrap="off" ></textarea>               
+				</td>
+            </tr>
+            <tr><td class="board_line gray3_bg" colspan="2">&nbsp;</td></tr>
+                        <tr>
+                <td class="board_write_file board_text">파일첨부</td>
+                <td class="write_form board_text"><input id="file_name" name="file_name"  value="" />
+                  <input type="button" id="file_btn" value="파일첨부" onClick="upload()" />                </td>
+            </tr>
+                        <tr><td class="board_space white1_bg" colspan="2" style="height:5px;"></td></tr>
+            <tr><td class="board_space gray2_bg" colspan="2">&nbsp;</td></tr>
+            </table>
+            </td>
+        </tr>
+        </table>
+                
+       
+        </form>
+        <div id="write_action_list" style="height:80px; padding-top:30px;">                    <img src="/images/write/write_btn.gif" width="70" height="26" />&nbsp;&nbsp;
+                    <img src="/images/write/back_btn.gif" width="70" height="26" />        </div>
+    </td></tr>
+    </table>
+					</td>
+                    <td width="170"></td>
+                  </tr>
+                </table></td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+              </tr>
+            </table>
+			
+			<!-- 하단 영역 ======================================================================================= --></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="39"></td>
+            <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td height="1" colspan="3" bgcolor="c3c3c3"></td>
+                </tr>
+              <tr>
+                <td width="222" height="100"><img src="/images/logo_bottom.gif" width="222" height="90"></td>
+                <td></td>
+                <td width="300"><img src="/images/footer.gif" width="300" height="90"></td>
+              </tr>
+            </table></td>
+            <td width="38"></td>
+          </tr>
+        </table></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,22 @@
+create table tbl_com_member
+    (
+    idx int not null auto_increment
+    ,id varchar(8)
+    ,pwd varchar(8)
+    ,name varchar(20)
+    ,jumin1 char(6)
+    ,jumin2 char(7)
+    ,birth_yy char(4)
+    ,birth_mm char(2)
+    ,birth_dd char(2)
+    ,email_id varchar(30)
+    ,email_addr varchar(20)
+    ,post1 char(3)
+    ,post2 char(3)
+    ,addr1 varchar(40)
+    ,addr2 varchar(30)
+    ,cp1 char(3)
+    ,cp2 varchar(4)
+    ,cp3 varchar(4)
+    ,primary key(idx)
+    );

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Product">
+	<insert id="insert" parameterType="Product">
+		insert into product(
+			product_id,
+			sub_id,
+			product_name,
+			gender,
+			brand,
+			origin,
+			price,
+			discount,
+			point,
+			memo,
+			psize,
+			color,
+			img,
+			detail
+		)
+		 values(
+		 	seq_product.nextval,
+		 	#{sub_id},
+		 	#{product_name},
+		 	#{gender},
+		 	#{brand},
+		 	#{origin},
+		 	#{price},
+		 	#{discount},
+		 	#{point},
+		 	#{memo},
+		 	#{psize},
+		 	#{color},
+		 	#{img},
+		 	#{detail}
+		 )
+		 <selectKey keyProperty="product_id" order="AFTER" resultType="int">
+		 	select seq_product.currval as seq from dual
+		 </selectKey>		 
+	</insert>	 
+	
+</mapper>
+
