@@ -8,6 +8,8 @@
 		<typeAlias type="com.fashion.product.TopCategory" alias="TopCategory"/>
 		<typeAlias type="com.fashion.product.SubCategory" alias="SubCategory"/>
 		<typeAlias type="com.fashion.product.Product" alias="Product"/>
+		<typeAlias type="com.fashion.product.Plan" alias="Plan"/>
+		<typeAlias type="com.fashion.product.PlanProduct" alias="PlanProduct"/>
 	</typeAliases>
 	
 	<environments default="development">
@@ -24,6 +26,8 @@
 		<mapper resource="com/fashion/mybatis/TopCategoryMapper.xml"/>
 		<mapper resource="com/fashion/mybatis/SubCategoryMapper.xml"/>
 		<mapper resource="com/fashion/mybatis/ProductMapper.xml"/>
+		<mapper resource="com/fashion/mybatis/PlanMapper.xml"/>
+		<mapper resource="com/fashion/mybatis/PlanProductMapper.xml"/>
 	</mappers>
 	
 </configuration>

@@ -23,8 +23,9 @@ public class PagingManager {
 		}
 		this.totalRecord=list.size();
 		pageSize=10;
+		totalPage=(int)Math.ceil((float)totalRecord/pageSize);
 		blockSize=10;
-		firstPage=currentPage=(currentPage-1)%blockSize;
+		firstPage=currentPage-(currentPage-1)%blockSize;
 		lastPage=firstPage+(blockSize-1);
 		curPos=(currentPage-1)*pageSize;
 		num=totalRecord-curPos;

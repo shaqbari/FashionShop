@@ -1,5 +1,7 @@
 package com.fashion.product;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 
 import com.fashion.mybatis.FactoryManager;
@@ -16,5 +18,14 @@ public class ProductDAO {
 		session.commit(); //DML의 경우
 		manager.closeSession(session);
 		return product_id;
+	}
+	
+	//모든 상품 가져오기
+	public List selectAll(){
+		List list=null;
+		SqlSession session=manager.getSession();
+		list=session.selectList("Product.selectAll");
+		manager.closeSession(session);	
+		return list;
 	}
 }

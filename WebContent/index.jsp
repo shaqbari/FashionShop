@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=utf-8"%>
+<!--변경가능성이 큰것은 테이블이 아닌 레코드로 있어야 한다. md추천, 기획, 시즌, best, new product 등  -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -50,15 +51,7 @@
 				<tr>
 					<td>
 						<!--메인 네비게이션 begin  -->
-						<table id="mainNavi" bgcolor="#000000" width="100%" cellpadding="0" cellspacing="0">
-							<tr>
-								<td>Top</td>
-								<td>DownWear</td>
-								<td>Shoes</td>
-								<td>Accessory</td>
-								<td>Leather</td>
-							</tr>
-						</table>
+						<%@ include file="/inc/main_navi.jsp" %>
 						<!--메인 네비게이션 end -->
 					</td>
 				</tr>				

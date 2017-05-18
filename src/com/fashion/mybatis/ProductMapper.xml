@@ -35,11 +35,16 @@
 		 	#{color},
 		 	#{img},
 		 	#{detail}
-		 )
+		 )		
 		 <selectKey keyProperty="product_id" order="AFTER" resultType="int">
 		 	select seq_product.currval as seq from dual
-		 </selectKey>		 
+		 </selectKey>		 		 
+		 
 	</insert>	 
+	
+	<select id="selectAll" resultType="Product">
+		 	select * from product order by product_id desc
+	</select>
 	
 </mapper>
 

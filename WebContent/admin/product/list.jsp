@@ -1,16 +1,22 @@
-<%@page import="java.util.ArrayList"%>
+<%@page import="com.fashion.product.Plan"%>
+<%@page import="com.fashion.product.PlanDAO"%>
+<%@page import="Common.file.FileManager"%>
+<%@page import="com.fashion.product.Product"%>
+<%@page import="com.fashion.product.ProductDAO"%>
+<%@page import="java.util.List"%>
 <%@page import="Common.board.PagingManager"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"%>
 <%!
 	PagingManager pm=new PagingManager();
+	ProductDAO productDAO=new ProductDAO();
+	PlanDAO planDAO=new PlanDAO();
 %>
 <%
-	ArrayList list=new ArrayList();
-	list.add("안녕");
-	list.add("안녕");
-	list.add("안녕");
-
+	List<Product> list=productDAO.selectAll();
+	//System.out.println("list사이즈는"+list.size());
 	pm.init(request, list);
+	
+	List<Plan> planList=planDAO.selectAll();
 %>
 <html>
 <head>
@@ -31,10 +37,13 @@ td{font-size:9pt}
 <tr valign="middle">
   	<td height="30" align="right">
 	<select name="sellType" style="width:170px">
-        <option value="">▼ 상품검색</option>
-        <option value="new" >기획상품</option>
+        <option value="0">▼ 상품검색</option>
+       	<%for(int i=0; i<planList.size(); i++){ %>
+       		<%Plan plan=planList.get(i); %>
+        	<option value="<%=plan.getPlan_id() %>"><%=plan.getPlan_title() %></option>        
+        <%} %>
       </select> 
-	<img src="/admin/images/bt_search.gif"  onClick="sendEventProduct();" style="cursor:hand">	
+	<input type="button" value="보내기"  onClick="regist();">	
 	</td>
 </tr>
 <tr>
@@ -56,9 +65,8 @@ td{font-size:9pt}
 	    <td width="85" bgcolor="#EFEFEF" class="top_bg"><strong>할인가</strong></td>
         <td width="77" bgcolor="#EFEFEF" class="top_bg"><strong>색상</strong></td>
 	    <td width="65" bgcolor="#EFEFEF" class="top_bg"><strong>사이즈</strong></td>
-	    <td width="69" bgcolor="#EFEFEF" class="top_bg"><strong>제조사</strong></td>
+	    <td width="69" bgcolor="#EFEFEF" class="top_bg"><strong>원산지</strong></td>
 	    <td width="120" bgcolor="#EFEFEF" class="top_bg"><strong>브랜드</strong></td>
-	    <td width="99" bgcolor="#EFEFEF" class="top_bg"><strong>재고량</strong></td>
 	    <td width="95" bgcolor="#EFEFEF" class="top_bg"><strong>적립율</strong></td>
 	    </tr>
     <tr><td colspan="12" height="1" bgcolor="#CCCCCC"></td>
@@ -74,13 +82,24 @@ td{font-size:9pt}
 <!--Paging Start-->
 
 	<table width="900" cellspacing="2" cellpadding="2" style="font-size:9pt">
+	<%int num=pm.getNum(); %>
+	<%int curPos=pm.getCurPos(); %>
 	<%for(int i=0; i<pm.getPageSize(); i++){ %>
-		<%if(pm.getNum()<0) break; %>
+		<%if(num<1) break; %>
+		<%System.out.println(curPos); %>
+		<%Product product=list.get(curPos++); %>
 		<tr>
-			<td width="100"><a href="regist.asp?busi_type=" class="but"></a></td>
-			<td width="170" align="right"></td>
-			<td width="170" align="right">&nbsp;		</td>
-			<td width="198" height="15" align="right" id="form_page"></td>
+			<td><input type="checkbox" /></td>
+			<td><%=num--%><td><!--연살할때는 getter와 setter사용하는것 보다 변수로 빼는 것이 좋다.  -->
+			<td><img style="width:100px; height:100px;" src="/product/<%=product.getProduct_id()+"."+FileManager.getExt(product.getImg()) %>"/></td>
+			<td><%=product.getProduct_name() %></td>
+			<td><%=product.getDiscount() %></td>
+			<td><%=product.getPrice() %></td>
+			<td><%=product.getColor() %></td>
+			<td><%=product.getPsize() %></td>
+			<td><%=product.getOrigin() %><td>
+			<td><%=product.getBrand() %><td>
+			<td><%=product.getPoint() %></td>
 		</tr>
 	<%} %>
 	</table>
