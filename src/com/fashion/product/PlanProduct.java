@@ -1,11 +1,20 @@
 package com.fashion.product;
 
+import java.util.ArrayList;
+
 public class PlanProduct {
 	private int planproduct_id;
 	private int plan_id;
 	private int product_id;
+	private Product product;
+
 	
-	
+	public Product getProduct() {
+		return product;
+	}
+	public void setProduct(Product product) {
+		this.product = product;
+	}
 	public int getPlanproduct_id() {
 		return planproduct_id;
 	}

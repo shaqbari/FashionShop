@@ -17,6 +17,7 @@ public class ProductDAO {
 		product_id=dto.getProduct_id();//성공한 이후 product_id를 받을 수 있다.
 		session.commit(); //DML의 경우
 		manager.closeSession(session);
+		
 		return product_id;
 	}
 	
@@ -26,6 +27,17 @@ public class ProductDAO {
 		SqlSession session=manager.getSession();
 		list=session.selectList("Product.selectAll");
 		manager.closeSession(session);	
+		
 		return list;
+	}
+	
+	//상품 한건 가져오기	
+	public Product select(int product_id){
+		Product product=null;
+		SqlSession session=manager.getSession();
+		product=session.selectOne("Product.select", product_id);
+		manager.closeSession(session);	
+		
+		return product;
 	}
 }

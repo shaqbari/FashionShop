@@ -46,5 +46,9 @@
 		 	select * from product order by product_id desc
 	</select>
 	
+	<select id="select" resultType="Product" parameterType="int">
+		 	select * from product where product_id=#{product_id}
+	</select>
+	
 </mapper>
 

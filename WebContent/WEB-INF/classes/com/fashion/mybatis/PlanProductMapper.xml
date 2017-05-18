@@ -3,7 +3,28 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="PlanProduct">
+	 <insert id="insert" parameterType="PlanProduct">
+	 	insert into planproduct(planproduct_id, plan_id, product_id)
+	 	values(seq_planproduct.nextVal, #{plan_id}, #{product_id})
+	 </insert>
 	 	 
+	 <!--product 테이블과 조인 1:1  association-->
+	 <resultMap type="PlanProduct" id="joinMap">	 	
+	 	<id column="pp.planproduct_id" property="planproduct_id"/> 	
+	 	<association
+	 		property="product"
+	 		javaType="Product"
+	 		select="selectProduct"
+	 		column="product_id"/>
+	 </resultMap>	 
+	 <select id="selectJoin" resultMap="joinMap" parameterType="int">
+	 	select pp.planproduct_id, p.product_id, product_name, gender, price, discount, img
+		from planproduct pp, product p
+		where pp.product_id=p.product_id and plan_id=#{plan_id}
+	 </select>
+	 <select id="selectProduct" resultType="Product">
+	 	select * from product where product_id=#{product_id}
+	 </select>
 	 
 </mapper>
 <!-- mybatis에서 변수는 #{}안에 넣는다  jsp의 $와 헷갈리지 말자 -->

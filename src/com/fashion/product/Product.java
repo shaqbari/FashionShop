@@ -15,6 +15,15 @@ public class Product {
 	private String color;
 	private String img;
 	private String detail;
+	private int ea;
+	
+	
+	public int getEa() {
+		return ea;
+	}
+	public void setEa(int ea) {
+		this.ea = ea;
+	}
 	//인자가 많으면 sqlplus에서 desc로 테이블 조사해서 복사해서 소문자로 변경하자.
 	public int getProduct_id() {
 		return product_id;

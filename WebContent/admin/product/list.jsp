@@ -25,18 +25,34 @@
 <style>
 td{font-size:9pt}
 </style>
-<script language="javascript">
+<script >
+	function checkAll(){
+		//모든 체크박스가, 대표 체크박스의 상태를 따라하게 만든다.
+		//form1.ch[2].checked=true;
+		for(var i=0; i<form1.ch.length; i++){ //ch는 name이라 배열로 잡히기 때문에 length가 가능하다.
+			form1.ch[i].checked=form1.chAll.checked;//대왕 체크박스를 따라간다.
+		}
+	}
+	
+	//선택한 상품들을 기획성 상품으로 등록 요청
+	function regist(){
+		form1.method="post"; //나중에 많이 만들어질 경우를 대비
+		form1.action="regist_plan.jsp";
+		form1.submit();
+	}
+
+
 </script>
 </head>
 <body leftmargin="10" topmargin="0"  marginwidth="0" marginheight="0">
 <table width="900" border="0" cellpadding="0" cellspacing="0">
-<form name="form1" method="post" action="/admin/food_deal/list.asp">
+<form name="form1">
 <tr>
 	<td>&nbsp;</td>
 </tr>
 <tr valign="middle">
   	<td height="30" align="right">
-	<select name="sellType" style="width:170px">
+	<select name="plan_id" style="width:170px">
         <option value="0">▼ 상품검색</option>
        	<%for(int i=0; i<planList.size(); i++){ %>
        		<%Plan plan=planList.get(i); %>
@@ -57,7 +73,9 @@ td{font-size:9pt}
 		<td colspan="12" height="5" bgcolor="#BBBBBB"></td>
 	</tr>
 	<tr height="35" align="center">
-		<td width="38" bgcolor="#EFEFEF" class="top_bg"><input type="checkbox" style="background:yellow" name="chAll" onClick="checkAll()"></td>        
+		<td width="38" bgcolor="#EFEFEF" class="top_bg">
+			<input type="checkbox" style="background:yellow" name="chAll" onClick="checkAll()">
+		</td>        
 		<td width="38" bgcolor="#EFEFEF" class="top_bg"><strong>No</strong></td>
 	    <td width="161" bgcolor="#EFEFEF" class="top_bg"><strong>이미지</strong></td>
         <td width="130" bgcolor="#EFEFEF" class="top_bg"><strong>상품명</strong></td>
@@ -89,7 +107,8 @@ td{font-size:9pt}
 		<%System.out.println(curPos); %>
 		<%Product product=list.get(curPos++); %>
 		<tr>
-			<td><input type="checkbox" /></td>
+			<td><input type="checkbox" name="ch" value="<%=product.getProduct_id()%>"/></td>
+			 <!--checkbox는 check한것만 post나 get방식으로 전송된다.  -->
 			<td><%=num--%><td><!--연살할때는 getter와 setter사용하는것 보다 변수로 빼는 것이 좋다.  -->
 			<td><img style="width:100px; height:100px;" src="/product/<%=product.getProduct_id()+"."+FileManager.getExt(product.getImg()) %>"/></td>
 			<td><%=product.getProduct_name() %></td>
