@@ -38,7 +38,7 @@ body {
 	function goCart(){
 		alert("전송");
 		form1.method="post";
-		form1.action="cart.jsp";
+		form1.action="pre_cart.jsp";
 		form1.submit();
 		
 	}

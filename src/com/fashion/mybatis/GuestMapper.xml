@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Guest">
+	 <insert id="insert" parameterType="Guest">
+	 	insert into guest(guest_id, name, phone, addr, email)
+	 	values(seq_guest.nextVAl, #{name}, #{phone}, #{addr}, #{email})
+	 	
+	 	<selectKey keyProperty="guest_id" order="AFTER" resultType="int">
+	 		select seq_guest.currVal from dual
+	 	</selectKey>
+	 
+	 </insert>
+</mapper>
+<!-- mybatis에서 변수는 #{}안에 넣는다  jsp의 $와 헷갈리지 말자 -->

@@ -10,6 +10,8 @@
 		<typeAlias type="com.fashion.product.Product" alias="Product"/>
 		<typeAlias type="com.fashion.product.Plan" alias="Plan"/>
 		<typeAlias type="com.fashion.product.PlanProduct" alias="PlanProduct"/>
+		<typeAlias type="com.fashion.order.Guest" alias="Guest"/>
+		<typeAlias type="com.fashion.order.Customer" alias="Customer"/>
 	</typeAliases>
 	
 	<environments default="development">
@@ -28,6 +30,8 @@
 		<mapper resource="com/fashion/mybatis/ProductMapper.xml"/>
 		<mapper resource="com/fashion/mybatis/PlanMapper.xml"/>
 		<mapper resource="com/fashion/mybatis/PlanProductMapper.xml"/>
+		<mapper resource="com/fashion/mybatis/GuestMapper.xml"/>
+		<mapper resource="com/fashion/mybatis/CustomerMapper.xml"/>
 	</mappers>
 	
 </configuration>
